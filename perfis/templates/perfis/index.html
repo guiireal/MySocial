@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> >> MySocial </title>
+    <link rel="stylesheet" href="{% static "styles/bootstrap.css"%}">
+    <link rel="stylesheet" href="{% static "styles/main.css"%}">
+</head>
+<body>
+    <h1>Bem vindo a rede MySocial</h1>
+    <ul>
+        {% for cont in usuarios %}
+        <li> 
+            <a href="{% url 'exibir' cont.id %}">
+            {{ cont.nome }} / {{ cont.email }}
+            </a> 
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
