@@ -10,12 +10,17 @@
         <h1>Detalhes do Perfil</h1>
     </div>
     
+    <img src="{% static "img/photo.jpg" %}" 
+        class="pull-right"
+        style="padding-top: 5px; padding-right: 5px">
+    
     <p style="padding-left: 10px">Nome: {{ perfil.nome }}</p>
 
     <address style="padding-left: 10px">
+        
         E-mail: {{ perfil.email }}<br>
         Telefone: {{ perfil.telefone }}<br>
-        Empresa: {{ perfil.empresa }}<br>
+        Empresa: {{ perfil.empresa }}<br>   
     </address>
     
     <p style="padding-left: 10px">
