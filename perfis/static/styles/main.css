@@ -5,6 +5,12 @@ body {
   padding-bottom: 20px;
 }
 
+.imgcenter {
+  text-align: center;
+  font-size: 9pt;
+  color: #02310d;
+}
+
 .header,
 .content,
 .footer {

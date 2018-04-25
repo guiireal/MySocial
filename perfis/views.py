@@ -4,11 +4,19 @@ from .models import Perfil
 # Create your views here.
 def index(request):
     users = Perfil.objects.all()
-    return render(request, 'perfis/index.html', { 'usuarios' : users })
+    return render(request, 'perfis/index.html', 
+        { 
+            'usuarios' : users , 
+            'perfil_logado' : get_perfil_logado(request)
+        })
 
 def exibir(request, perfil_id):
     perfil = Perfil.objects.get(id = perfil_id)
-    return render(request, 'perfis/perfil.html', { 'perfil' : perfil })
+    return render(request, 'perfis/perfil.html', 
+        { 
+            'perfil' : perfil ,
+            'perfil_logado' : get_perfil_logado(request)
+        })
 
 ''' REALIZANDO CONVITE DE CONEXÃO COM OUTRO USUARIO '''
 def convidar(request, perfil_id):
