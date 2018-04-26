@@ -32,7 +32,7 @@
         {% for convite in perfil_logado.convites_recebidos.all %}
         <li class="list-group-item">
            {{ convite.solicitante.nome }}
-           <a href="#" class="pull-right">Aceitar Conexão</a>
+           <a href="{% url 'aceitar' convite.id %}" class="pull-right">Aceitar Conexão</a>
         </li>
         {% endfor %}
     </ul>
@@ -40,6 +40,31 @@
     <ul class="list-group">
         <li class="list-group-item">
             Nenhum Convite Recebido :(
+        </li>
+    </ul>
+    {% endif %}
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>
+            Você tem {{ perfil_logado.contatos.count }} 
+            contato{{ perfil_logado.contatos.count |pluralize }}
+            em sua rede!
+        </strong>
+    </div>
+    {% if perfil_logado.contatos.count %}
+    <ul class="list-group">
+        {% for contato in perfil_logado.contatos.all %}
+            <li class="list-group-item">
+                <a href="{% url 'exibir' contato.id %}"> {{contato.nome}} </a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <ul class="list-group">
+        <li class="list-group-item">
+            Nenhum Conexão estabelecida ainda :(
         </li>
     </ul>
     {% endif %}
