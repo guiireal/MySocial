@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Perfil(models.Model):
 
     nome = models.CharField(max_length=255, null=False)

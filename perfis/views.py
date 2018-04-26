@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
 from .models import Perfil
+from django.shortcuts import render, redirect
 
-# Create your views here.
+
 def index(request):
     users = Perfil.objects.all()
     return render(request, 'perfis/index.html', 
@@ -28,5 +28,5 @@ def convidar(request, perfil_id):
 
 ''' SIMULANDO USUARIO LOGADO PARA TESTES DE CONVITES '''
 def get_perfil_logado(request):
-    return Perfil.objects.get(id=1)
+    return Perfil.objects.get(id=3)
 
