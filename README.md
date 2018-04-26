@@ -1,5 +1,7 @@
 # MySocial Connections
 
+<p align="center"><img src="https://github.com/ErisvaldoCorreia/MySocial/blob/master/MySocial.jpg"></p>
+
 <p>Projeto em Django e Python para uma mini Rede Social</p>
 
 <p>Seguindo os conceitos para uma proposta de Blog, MySocial vem tomando a forma de uma Rede com foco no Network</p>
