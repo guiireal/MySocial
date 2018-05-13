@@ -27,16 +27,22 @@
 
 <div class="col-lg-12">
     <div class="well well-sm">
-        {% if conectados %}
+        {% if perfil_proprio %}
             <p style="padding-top: 5px">
-                <strong>Vocês já estão conectados!</strong>
+                <strong>Bem vindo ao seu Perfil!</strong>
             </p>
         {% else %}
-            <p style="padding-top: 5px">
-                <a href="{% url 'convidar' perfil.id %}">
-                    Convidar Conexão
-                </a>
-            </p>
+            {% if conectados %}
+                <p style="padding-top: 5px">
+                    <strong>Vocês já estão conectados!</strong>
+                </p>
+            {% else %}
+                <p style="padding-top: 5px">
+                    <a href="{% url 'convidar' perfil.id %}">
+                        Convidar Conexão
+                    </a>
+                </p>
+            {% endif %}
         {% endif %}
 </div>
 </div>

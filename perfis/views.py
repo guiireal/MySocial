@@ -14,11 +14,13 @@ def exibir(request, perfil_id):
     perfil = Perfil.objects.get(id = perfil_id)
     perfil_logado = get_perfil_logado(request)
     conectados = perfil in perfil_logado.contatos.all()
+    perfil_proprio = perfil == get_perfil_logado(request)
     return render(request, 'perfis/perfil.html', 
         { 
             'perfil' : perfil ,
             'perfil_logado' : get_perfil_logado(request) ,
-            'conectados' : conectados
+            'conectados' : conectados,
+            'perfil_proprio' : perfil_proprio
         })
 
 ''' REALIZANDO CONVITE DE CONEXÃO COM OUTRO USUARIO '''
