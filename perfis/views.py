@@ -36,5 +36,4 @@ def aceitar(request, convite_id):
 
 ''' SIMULANDO USUARIO LOGADO PARA TESTES DE CONVITES '''
 def get_perfil_logado(request):
-    return Perfil.objects.get(id=1)
-
+    return Perfil.objects.get(id=2)
